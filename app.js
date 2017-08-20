@@ -1,5 +1,5 @@
 const postIDTest = "1612586125439813";
-var csvString = "nome,voto";
+var csvString = "";
 
 
  function exportToCSV(){
@@ -26,6 +26,7 @@ $(document).ready(function(){
   
   function computar(comments){
     var elegiveis = createElegiveis(comments);
+    csv = "nome,voto";
     var votes = [];
     var tableString = "";
     elegiveis.forEach(function(x){
