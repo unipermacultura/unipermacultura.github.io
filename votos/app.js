@@ -26,7 +26,7 @@ $(document).ready(function(){
   
   function computar(comments){
     var elegiveis = createElegiveis(comments);
-    csv = "nome,voto";
+    csvString = "nome,voto";
     var votes = [];
     var tableString = "";
     elegiveis.forEach(function(x){
