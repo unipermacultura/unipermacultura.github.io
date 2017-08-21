@@ -40,15 +40,15 @@ $(document).ready(function(){
     votes.forEach(function(x){
       if(x.votes < 1)
         return;
-      count++;
       tableString += `
            <tr>
               <th>`+count+`</th>
               <td>`+x.elegivel+`</td>
               <td>`+x.votes+`</td>
             </tr>
-      `
+      `;
       csvString += "\n" + x.elegivel+ ","+x.votes;
+      count++;
     });
     
     return tableString;
@@ -69,7 +69,7 @@ $(document).ready(function(){
     var data = comments.data;
     var count = 0;
     for(var i =0; i < data.length; i++){
-      if(data[i].message.toLowerCase().lastIndexOf(elegivel,0) === 0 && data[i].from.name.toLowerCase().indexOf(elegivel) === -1){
+      if(data[i].message.toLowerCase().indexOf(elegivel) !== -1 && data[i].from.name.toLowerCase().indexOf(elegivel) === -1){
         count++;  
       }
     }
